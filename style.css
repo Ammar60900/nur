@@ -1,0 +1,161 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe0ec, #ffc2d1, #ff8fab);
+    overflow: hidden;
+    text-align: center;
+    color: #5c1835;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 550px;
+    padding: 40px 25px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 30px;
+    box-shadow: 0 15px 50px rgba(150, 20, 70, 0.2);
+    backdrop-filter: blur(10px);
+    animation: appear 0.8s ease;
+}
+
+h1 {
+    font-size: 2.3rem;
+    margin-bottom: 18px;
+}
+
+#subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    background: #ff477e;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(255, 71, 126, 0.35);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #e91e63;
+}
+
+#surprise {
+    margin-top: 25px;
+    animation: appear 0.5s ease;
+}
+
+#middleEmoji {
+    font-size: 6rem;
+    animation: shake 0.5s ease;
+}
+
+#message {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 15px 0 25px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#loveSection {
+    margin-top: 25px;
+    animation: appear 1s ease;
+}
+
+#loveSection h2 {
+    color: #ff1744;
+    font-size: 2.8rem;
+    animation: heartbeat 1s infinite;
+}
+
+.loveText {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+.arabicText {
+    margin-top: 15px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    direction: rtl;
+}
+
+.bigHeart {
+    font-size: 4rem;
+    margin-top: 20px;
+    animation: heartbeat 1s infinite;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 25px;
+    animation: floatUp linear forwards;
+    pointer-events: none;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-20deg); }
+    75% { transform: rotate(20deg); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 18px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    #loveSection h2 {
+        font-size: 2.3rem;
+    }
+}
